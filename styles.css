@@ -33,9 +33,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px soli
 .site-header { position: sticky; top: 0; z-index: 40; backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); background: rgba(8, 13, 10, .83); border-bottom: 1px solid var(--stroke); }
 .header-inner { height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-.brand-icon { width: 43px; height: 43px; border: 1px solid var(--green); border-radius: 11px; background: linear-gradient(145deg, #233f28, #0d1810); display: grid; place-items: center; position: relative; box-shadow: inset 0 0 24px rgba(125, 255, 95, .1); overflow: hidden; }
-.brand-icon span { font-size: 30px; letter-spacing: -4px; font-weight: 950; line-height: 1; transform: skewX(-12deg) translateX(-2px); }
-.brand-icon i { position: absolute; width: 30px; height: 4px; background: var(--green); right: -8px; bottom: 7px; transform: rotate(-45deg); }
+.brand-avatar { width: 52px; height: 52px; flex-shrink: 0; display: block; object-fit: cover; border: 1px solid rgba(156,255,87,.7); border-radius: 10px; background: #e9f0ed; box-shadow: 0 0 0 3px rgba(156,255,87,.06), 0 6px 24px rgba(0,0,0,.4); }
 .brand-name { font-size: 18px; font-weight: 900; letter-spacing: -.9px; line-height: 1; }
 .brand-dot { color: var(--green); }
 .brand-name small { display: block; margin-top: 5px; color: var(--muted); letter-spacing: 2.6px; font: 600 8px var(--mono); }
@@ -85,7 +83,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px soli
 .window-dots i { width: 6px; height: 6px; border-radius: 50%; background: #5f7462; }
 .window-dots i:first-child { background: #85c874; }
 .project-name { display: flex; align-items: center; gap: 8px; }
-.mini-k { display: grid; place-items: center; width: 16px; height: 16px; color: #0b190b; font: 800 11px var(--font); background: var(--green); border-radius: 3px; }
+.mini-brand-avatar { display: block; width: 16px; height: 16px; object-fit: cover; border-radius: 3px; }
 .window-export { font-weight: 800; color: var(--green); }
 .window-export span { padding-left: 4px; }
 .studio-body { display: grid; grid-template-columns: 30px 118px minmax(0,1fr) 111px; height: 306px; background: #0e130f; }
@@ -275,7 +273,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px soli
 .site-footer { border-top: 1px solid var(--stroke); background: #0b120e; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; flex-wrap: wrap; min-height: 145px; padding-block: 30px; }
 .footer-brand { display: flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 900; letter-spacing: .04em; }
-.footer-mark { color: var(--green); font-size: 38px; font-weight: 950; letter-spacing: -.12em; }
+.footer-logo { display: block; flex: none; width: 54px; height: 54px; object-fit: cover; border: 1px solid rgba(156,255,87,.35); border-radius: 9px; }
 .footer-brand small { display: block; font: 8px var(--mono); color: #66856b; margin-top: 6px; letter-spacing: .12em; }
 .footer-links { display: flex; gap: 24px; font-size: 12px; color: #bdccbe; }
 .footer-links a:hover { color: var(--green); }
@@ -333,7 +331,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px soli
 @media (max-width: 520px) {
   .container { width: calc(100% - 34px); }
   .brand-name { font-size: 16px; }
-  .brand-icon { width: 40px; height: 40px; }
+  .brand-avatar { width: 44px; height: 44px; }
   .hero { padding-block: 69px 70px; }
   .eyebrow { font-size: 8px; gap: 8px; }
   .eyebrow-rule { width: 12px; }
