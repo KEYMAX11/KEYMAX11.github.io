@@ -385,3 +385,9 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px soli
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+
+/* Public Windows release links */
+.access-step p a,.faq-list p a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+.access-step p a:hover,.faq-list p a:hover{color:var(--green-bright)}
+@media(max-width:1200px){.hero-actions{flex-wrap:wrap;gap:20px 24px}}

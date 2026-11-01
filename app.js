@@ -70,3 +70,22 @@ if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-mot
 } else {
   revealElements.forEach((element) => element.classList.add('is-visible'));
 }
+
+
+// Keep every public download button pointed at the newest Windows installer.
+// GitHub's "latest" page remains a safe fallback if its public API is unavailable.
+const latestDownloadLinks = document.querySelectorAll('[data-download-latest]');
+if (latestDownloadLinks.length) {
+  fetch('https://api.github.com/repos/KEYMAX11/keymax-editing-app-releases/releases/latest', {
+    headers: { Accept: 'application/vnd.github+json' }
+  })
+    .then(response => response.ok ? response.json() : null)
+    .then(release => {
+      const installer = release?.assets?.find(asset =>
+        /^Keymax-Editing-App-\d+\.\d+\.\d+-x64\.exe$/i.test(asset.name || ''));
+      const url = installer?.browser_download_url;
+      if (!url || !url.startsWith('https://github.com/KEYMAX11/keymax-editing-app-releases/releases/download/')) return;
+      latestDownloadLinks.forEach(link => { link.href = url; });
+    })
+    .catch(() => {});
+}
